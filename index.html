@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GivHub</title>
-</head>
-<body>
+    <!--Header with title and links to css and js-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trudge</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <!--Body for nav bar, search bar, API, etc.-->
+    <body>
+        <!--Trudge logo-->
+        <header>
+            <div>
+                <a href="/">
+                    <img class="logo" src="./images/Trudge_Logo.png">
+                </a>
+            </div>
+            <!--Nav bars to relevant sites-->
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">List of Trails</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </nav>              
+        </header>
+        <!--Search bar-->
+        <div>
+            <form action="#" class="search-bar">
+                <input type="text" placeholder="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
 
-    <header>
-        <h1>GivHub</h1>
+        <div class="card-group">
+            <!--Featured parks-->
+            <div class="card">
+                <img src="./images/locations/1.jpg">
+                <div class="layer"></div>
+                <div class="info">
+                    <h1>Park 1</h1>
+                    <p>This is a park</p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/locations/2.jpg">
+                <div class="layer"></div>
+                <div class="info">
+                    <h1>Park 2</h1>
+                    <p>This is another park</p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/locations/3.jpg">
+                <div class="layer"></div>
+                <div class="info">
+                    <h1>Park 3</h1>
+                    <p>This is one more park</p>
+                    <button>Explore</button>
+                </div>
+            </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="sign-in">Sign in</a> or <a href="register">register</a>
-                </li>
+            <!--Crime warnings-->
+            <div>
+            
+            </div>
+            
+            <!--Weather warnings-->
+            <div>
+            
+            </div>
+        </div>
 
-                <li>
-                    <a href="search">Item Search</a>
-                </li>
+        <!--Footer credits student names, date of completion-->
+        <footer>
 
-                <li>
-                    <a href="Reviews and Ratings">Reviews & Ratings</a>
-                </li>
-            </ul>
-        </nav>
+        </footer>
 
-
-    </header>
-
-
-    
-</body>
+    </body>
 </html>
