@@ -140,3 +140,11 @@ div {
 .card-group:hover > .card:not(:hover) {
     filter: blur(5px);
 }
+
+#trail-info {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+}
