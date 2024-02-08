@@ -27,57 +27,56 @@
         </header>
         <!--Search bar-->
         <div>
-            <form action="#" class="search-bar">
+            <form action="#" id="search" class="search-bar">
                 <input type="text" placeholder="search">
-                <button type="submit">Search</button>
+                <button type="submit" >Search</button>
             </form>
         </div>
-
-        <div class="card-group">
-            <!--Featured parks-->
-            <div class="card">
-                <img src="./images/locations/1.jpg">
-                <div class="layer"></div>
-                <div class="info">
-                    <h1>Park 1</h1>
-                    <p>This is a park</p>
-                    <button>Explore</button>
+        <section id="main">
+            <section id="popular-locations">
+                <div class="card-group">
+                    <!--Featured parks-->
+                    <div class="card">
+                        <img src="./images/locations/1.jpg">
+                        <div class="layer"></div>
+                        <div class="info">
+                            <h1>Park 1</h1>
+                            <p>This is a park</p>
+                            <button>Explore</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/locations/2.jpg">
+                        <div class="layer"></div>
+                        <div class="info">
+                            <h1>Park 2</h1>
+                            <p>This is another park</p>
+                            <button>Explore</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/locations/3.jpg">
+                        <div class="layer"></div>
+                        <div class="info">
+                            <h1>Park 3</h1>
+                            <p>This is one more park</p>
+                            <button>Explore</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./images/locations/2.jpg">
-                <div class="layer"></div>
-                <div class="info">
-                    <h1>Park 2</h1>
-                    <p>This is another park</p>
-                    <button>Explore</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/locations/3.jpg">
-                <div class="layer"></div>
-                <div class="info">
-                    <h1>Park 3</h1>
-                    <p>This is one more park</p>
-                    <button>Explore</button>
-                </div>
-            </div>
-
-            <!--Crime warnings-->
-            <div>
+            </section>
+            <section id="trail-info">
+                <h1>Trail Information</h1>
+                <div class="trail-info"></div>
             
-            </div>
-            
-            <!--Weather warnings-->
-            <div>
-            
-            </div>
-        </div>
-
+            </section>
+        </section>
         <!--Footer credits student names, date of completion-->
         <footer>
 
         </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/crime.js"></script>
     </body>
 </html>
