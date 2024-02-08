@@ -1,49 +1,41 @@
 
-//test lat and lon for Phoenix
-lat = 33.5511156
-lon = -112.1323174
-
-
+//test lat and lon for Phoenix (testing purposes)
+// lat = 33.5511156
+// lon = -112.1323174
 
 // Get the form element
 const form = document.querySelector('form');
 
-// Add event listener for form submission
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form submission
+// Add event listener for form submission (WIP)
+// form.addEventListener('submit', (event) => {
 
-    // Get the user input value
-    const userInput = form.querySelector('input').value;
+// });
 
-    // Hide the old section
-    const oldSection = document.querySelector('#popular-locations');
-    oldSection.style.display = 'none';
 
-    // Show the new section
-    const newSection = document.querySelector('#trail-info');
-    newSection.style.display = 'flex';
+// create info card for spefific trail when clicked
+var trail = document.getElementById("more-info-btn");
 
-    // Use the location variable for further processing
-    console.log('User location:', userInput);
+trail.addEventListener("click", function() {
+    // Hides content in main section
+    document.getElementById("popular-locations").style.display = "none";
 
-    // Clear the input field
-    form.querySelector('input').value = '';
+    // Create a new div element
+    var newDiv = document.createElement("section");
+    newDiv.setAttribute("id", "trail-info");
 
-    // Get most popular trails for the location
-    //getTrails(userInput);
-    
+    // and give it some content
+    var newContent = document.createTextNode("Testing new section for trail info");
+
+    // add the text node to the newly created div
+    newDiv.appendChild(newContent);
+
 });
 
 
-function getTrails(location) {  
-    fetch("https://www.hikingproject.com/data/get-trails?lat=33.5511156&lon=-112.1323174&maxDistance=10&key=200929828-8f6f0a6b6b6a7d6a5e1b3a7b7f6e3a6b")
-        .then(response => response.json())
-        .then(result => {
-        const trails = result; // Save the JSON array as a variable
-        console.log(trails); // Use the variable as needed
-        })
-        .catch(error => console.log('error', error));
-    };
+// [place holder for trail data]
+// function getTrails(location) {  
+
+//     };
 
 
 
@@ -56,37 +48,8 @@ function getStreet(lat, lon) {
       const street = result; // Save the JSON array as a variable
       console.log(street); // Use the variable as needed
       console.log(street.results[0].address_line1);
-      getCrimeHistory(street.results[0].address_line1);
+    // Runs crime api function with street name derivd from reverse geocoding lat and lon (testing purposes)
+    //getCrimeHistory(street.results[0].address_line1); 
     })
     .catch(error => console.log('error', error));
   }
-
-//City of Phenoix Open Data Crime API
-function getCrimeHistory(street) {
-  var data = {
-    resource_id: '0ce3411a-2fc6-4302-a33f-167f68608a20', // the resource id
-    q: street // query for how many crime per street
-  };
-
-  fetch('https://www.phoenixopendata.com/api/3/action/datastore_search', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-    .then(response => response.json())
-    .then(data => {
-      alert('Total results found: ' + data.result.total);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-
-
-    console.log(data);
-  
-}
-
-//testing
-getStreet(lat, lon);
