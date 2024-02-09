@@ -142,7 +142,7 @@ section {
 }
 
 #trail-info {
-    display: none;
+    /* display: none; */
     flex-direction: column;
     align-items: center;
     gap: 25px;
