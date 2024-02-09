@@ -1,26 +1,7 @@
 
-// const curr = "/current.json";
-// const bcurr = base + curr + "?key=b31d5f7b851e4eaeafd10557240802&q=";
-
 const base = "http://api.weatherapi.com/v1";
 const fore = "/forecast.json";
 const bfore = base + fore + "?key=b31d5f7b851e4eaeafd10557240802&q=";
-
-async function whaa (place) {
-	const qnew = bcurr + place;
-	const qfore = bfore + place;
-	const current =  await fetch(qnew);
-	const nfore = await fetch(qfore);
-	const rhead = await current.json();
-	const fhead = await nfore.json();
-	const c = rhead.current;
-	const f = fhead.forecast.forecastday;
-	let basic = {};
-	let forech = {};
-	let extra = {};
-}
-//	sunrise, sunset, moon phase, condition, total precipitation, minmax temp, 
-//	max wind, temp throughout day, current temp, chancve of rain, 
 
 async function better (p) {
 	p = p || "Phoenix";
@@ -32,7 +13,7 @@ async function better (p) {
 		temp: cake.temp_f,
 		feelsLike: cake.feelslike_f,
 		condt: cake.condition.text,
-		sunRS: (pizza.astro.sunrise, pizza.astro.sunset),
+		sunRS: [pizza.astro.sunrise, pizza.astro.sunset],
 		rain: pizza.day.totalprecip_in,
 	};
 	// don't worry about my fingers, I wrote this in with code lol
@@ -60,6 +41,35 @@ async function better (p) {
 		moonPhase: pizza.astro.moon_phase,
 		moonRS: (pizza.astro.moonrise, pizza.astro.moonset),
 	};
-	console.log(basic, forech, extra);
+	const sects = document.querySelectorAll("section");
+	const bz = sects[0];
+	const fz = sects[1];
+	const ez = sects[2];
+	basicHeader = document.createElement("h1");
+	basicHeader.textContent = "Current Weather\nPhoenix, AZ";
+	bz.appendChild(basicHeader);
+	const basCont = document.createElement("p");
+	bz.appendChild(basCont);
+	bqc = "Currently " + basic.temp + "Degrees and " + basic.condt +  "\nFeels Like: " + basic.feelsLike + "\nThe sun will rise at " + basic.sunRS[0] + " and will set at " + basic.sunRS[1]  + "\nIt is set to rain about " + basic.rain + " inches today";
+	basCont.textContent = bqc;
 }
-better("Phoenix");
+
+//---------------------------------------------------------------------------//
+
+let b, f, e = better("Phoenix");
+console.log(b, f, e);
+// const sects = document.querySelectorAll("section");
+// const bz = sects[0];
+// const fz = sects[1];
+// const ez = sects[2];
+
+// basicHeader = document.createElement("h1");
+// basicHeader.textContent = "Current Weather\nPhoenix, AZ";
+// bz.appendChild(basicHeader);
+// const basCont = document.createElement("p");
+// bz.appendChild(basCont);
+// bqc = "Currently " + b.temp + "Degrees and " + b.condt +  "\nFeels Like: " + b.feelsLike + "\nThe sun will rise at " + b.sunRS[0] + " and will set at " + b.sunRS[1]  + "\nIt is set to rain about " + b.rain + " inches today"
+// basCont.textContent = bqc;
+
+// fz.appendChild(document.createElement("h1").textContent = "Today's Forecast");
+// ez.appendChild(document.createElement("h1").textContent = "A Bit of Extras");
