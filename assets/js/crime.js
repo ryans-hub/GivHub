@@ -105,3 +105,48 @@ function getCrimeHistory(street) {
 //     </div>
 // </div>
 // <!--Footer credits student names, date of completion-->
+
+
+var crimeList = document.getElementById('crimes');
+
+const data = {
+  resource_id: '0ce3411a-2fc6-4302-a33f-167f68608a20',
+  limit: 5,
+  
+};
+
+const apiUrl = 'https://www.phoenixopendata.com/api/3/action/datastore_search';
+
+// Using the fetch function to make a GET request with query parameters
+
+
+function getCrime () {
+
+    fetch(`${apiUrl}?${new URLSearchParams(data)}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    }
+    return response.json();
+  })
+  .then(function (responseData) {
+
+    for (var i=0; i<responseData.result.records.length; i++) {
+        console.log("Crime " + [i] + " " + responseData.result.records[i].ZIP);
+
+        var createListItem = document.createElement('li');
+        const w = responseData.result.records[i]['UCR CRIME CATEGORY'];
+
+        createListItem.textContent = ("Crime " + [i + 1] + " " + w);
+
+        crimeList.appendChild(createListItem);
+    }
+
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+}
+
+getCrime();
