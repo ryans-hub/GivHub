@@ -1,139 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--Header with title and links to css and js-->
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" contents="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Trudge</title>
+<!---->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
-    <!--Body for nav bar, search bar, API, etc.-->
-    <body>
-        <!--Trudge logo-->
-        <header>
-            <section>
-                <a href="/">
-                    <img class="logo" src="./images/Trudge_Logo.png">
-                </a>
-            </section>
-            <!--Nav bars to relevant sites-->
-            <nav class="navbar">
-                <a href="#">Home</a>
-                <a id="getTrails" href="#">List of Trails</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-                <a href="weather.html">Weather</a>
-            </nav>              
-        </header>
+<body>
+    <header>
+        <div class="md:col-span-1">
+            <nav>
+                <!--Trudge logo and title-->
+                <div>
+                    <div class="relative object-contain h-12 w-24">
+                        <a href="/">
+                            <img class="absolute left-0 top-0" src="./images/Trudge_Logo.png">
+                        </a>
+                    </div>
+
+                    <!--Current Weather-->
+                    <div class="flex justify-center md:justify-end">
+                        <a href="#" class="btn text-blue-500 bg-white rounded-full p-2 hover:text-blue-700">Weather goes
+                            here</a>
+                    </div>
+
+                    <h1 class="font-bold pt-12 border-b border-gray-100">
+                        <a href="/" class="text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Trudge</a>
+                    </h1>
+                </div>
+
+                <!--Nav bars to relevant sites-->
+                <div>
+                    <ul class="grid grid-cols-4">
+                        <li class="text-gray-700">
+                            <a href="#">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>List of Trails</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="px-16 py-6 bg-gray-100 md:col-span-2">
         <!--Search bar-->
-        <section>
-            <form action="#" id="search" class="search-bar">
+        <div>
+            <form action="#" class="flex justify-center flex-auto">
                 <input type="text" placeholder="search">
-                <button type="submit" >Search</button>
+                <button type="submit">Search</button>
             </form>
-        </section>
-        <section id="main">
-            <section id="popular-locations">
-                <section class="card-group">
-                    <!--Featured parks-->
-                    <section class="card">
-                        <img src="./images/locations/1.jpg">
-                        <section class="layer"></section>
-                        <section class="info">
-                            <h1>Park 1</h1>
-                            <p>This is a park</p>
-                            <button id="more-info-btn">Explore</button>
-                        </section>
-                    </section>
-                    <section class="card">
-                        <img src="./images/locations/2.jpg">
-                        <section class="layer"></section>
-                        <section class="info">
-                            <h1>Park 2</h1>
-                            <p>This is another park</p>
-                            <button id="more-info-btn">Explore</button>
-                        </section>
-                    </section>
-                    <section class="card">
-                        <img src="./images/locations/3.jpg">
-                        <section class="layer"></section>
-                        <section class="info">
-                            <h1>Park 3</h1>
-                            <p>This is one more park</p>
-                            <button id="more-info-btn">Explore</button>
-                        </section>
-                    </section>
-                </section>
-            </section>
-            <!-- adds new section with trail specific details -->
-            <section id="trail-info">
-                <h1>Trail Information</h1>
-                <ul id="trails">
+        </div>
 
-                </ul>
-                <div class="trail-info"></div>
-            </section>
-        </section>
-                <!-- Crime thingy -->
-                <div id="crime-alert" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" style="display: none;">
-                    <!--
-                      Background backdrop, show/hide based on modal state.
-                  
-                      Entering: "ease-out duration-300"
-                        From: "opacity-0"
-                        To: "opacity-100"
-                      Leaving: "ease-in duration-200"
-                        From: "opacity-100"
-                        To: "opacity-0"
-                    -->
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-                  
-                    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                        <!--
-                          Modal panel, show/hide based on modal state.
-                  
-                          Entering: "ease-out duration-300"
-                            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                            To: "opacity-100 translate-y-0 sm:scale-100"
-                          Leaving: "ease-in duration-200"
-                            From: "opacity-100 translate-y-0 sm:scale-100"
-                            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                        -->
-                        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                          <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                            <div class="sm:flex sm:items-start">
-                              <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                </svg>
-                              </div>
-                              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Deactivate account</h3>
-                                <div class="mt-2">
-                                  <p class="text-sm text-gray-500">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                            <button id="proceed-btn" type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Proceed</button>
-                            <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Go Back</button>
-                          </div>
-                        </div>
-                      </div>
+        <div>
+            <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Featured trails</h4>
+            <div class="mt-8 grid lg:grid-cols-3 gap-10">
+                <!--Featured parks-->
+                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                    <img src="images/locations/1.jpg" alt="first park" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Park 1</span>
+                        <span class="block text-grey-500 text-sm">Description</span>
+                    </div>
+                    <div
+                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                        <span>hover 1</span>
                     </div>
                 </div>
-        <!--Footer credits student names, date of completion-->
-        <footer>
-            <script src="./assets/js/trail.js"></script>
 
-        </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/crime.js"></script>
-    <script src="./assets/js/script.js"></script>
-    </body>
+                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                    <img src="images/locations/2.jpg" alt="second park" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Park 1</span>
+                        <span class="block text-grey-500 text-sm">Description</span>
+                    </div>
+                    <div
+                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                        <span>hover 2</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                    <img src="images/locations/3.jpg" alt="third park" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Park 1</span>
+                        <span class="block text-grey-500 text-sm">Description</span>
+                    </div>
+                    <div
+                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                        <span>hover 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Crime warnings-->
+            <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Crime Warnings</h4>
+            <div class="flex justify-center">
+                <div>List of crime warnings here</div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer credits student names, date of completion-->
+    <footer>
+        <a href="/" class="flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed by [students] at [date]</a>
+    </footer>
+</body>
 </html>
