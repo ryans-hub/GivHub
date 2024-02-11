@@ -3,6 +3,12 @@ const base = "http://api.weatherapi.com/v1";
 const fore = "/forecast.json";
 const bfore = base + fore + "?key=b31d5f7b851e4eaeafd10557240802&q=";
 
+//	yeah, I'm lazy I know
+function newLine (st) {
+	let q = st + "\n";
+	return q
+}
+
 async function better (p) {
 	p = p || "Phoenix";
 	const wheat = await fetch(bfore + p);
@@ -42,16 +48,24 @@ async function better (p) {
 		moonRS: (pizza.astro.moonrise, pizza.astro.moonset),
 	};
 	const sects = document.querySelectorAll("section");
+
 	const bz = sects[0];
-	const fz = sects[1];
 	const ez = sects[2];
-	basicHeader = document.createElement("h1");
+	const basicHeader = document.createElement("h1");
 	basicHeader.textContent = "Current Weather\nPhoenix, AZ";
 	bz.appendChild(basicHeader);
 	const basCont = document.createElement("p");
 	bz.appendChild(basCont);
 	bqc = "Currently " + basic.temp + " degrees and " + basic.condt +  "\nFeels Like: " + basic.feelsLike + "\nThe sun will rise at " + basic.sunRS[0] + " and will set at " + basic.sunRS[1]  + "\nIt is set to rain about " + basic.rain + " inches today";
 	basCont.textContent = bqc;
+
+	const fz = sects[1];
+	const semiBasicHeader = document.createElement("h1");
+	semiBasicHeader.textContent = "Today's Forecast";
+	fz.appendChild(semiBasicHeader);
+	const bigBoy = document.createElement("p");
+	fz.appendChild(bigBoy);
+	let gbFun = "";
 }
 
 //---------------------------------------------------------------------------//
