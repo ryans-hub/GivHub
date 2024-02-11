@@ -50,26 +50,10 @@ async function better (p) {
 	bz.appendChild(basicHeader);
 	const basCont = document.createElement("p");
 	bz.appendChild(basCont);
-	bqc = "Currently " + basic.temp + "Degrees and " + basic.condt +  "\nFeels Like: " + basic.feelsLike + "\nThe sun will rise at " + basic.sunRS[0] + " and will set at " + basic.sunRS[1]  + "\nIt is set to rain about " + basic.rain + " inches today";
+	bqc = "Currently " + basic.temp + " degrees and " + basic.condt +  "\nFeels Like: " + basic.feelsLike + "\nThe sun will rise at " + basic.sunRS[0] + " and will set at " + basic.sunRS[1]  + "\nIt is set to rain about " + basic.rain + " inches today";
 	basCont.textContent = bqc;
 }
 
 //---------------------------------------------------------------------------//
 
-let b, f, e = better("Phoenix");
-console.log(b, f, e);
-// const sects = document.querySelectorAll("section");
-// const bz = sects[0];
-// const fz = sects[1];
-// const ez = sects[2];
-
-// basicHeader = document.createElement("h1");
-// basicHeader.textContent = "Current Weather\nPhoenix, AZ";
-// bz.appendChild(basicHeader);
-// const basCont = document.createElement("p");
-// bz.appendChild(basCont);
-// bqc = "Currently " + b.temp + "Degrees and " + b.condt +  "\nFeels Like: " + b.feelsLike + "\nThe sun will rise at " + b.sunRS[0] + " and will set at " + b.sunRS[1]  + "\nIt is set to rain about " + b.rain + " inches today"
-// basCont.textContent = bqc;
-
-// fz.appendChild(document.createElement("h1").textContent = "Today's Forecast");
-// ez.appendChild(document.createElement("h1").textContent = "A Bit of Extras");
+better("Phoenix");
