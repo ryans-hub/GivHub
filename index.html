@@ -22,8 +22,7 @@
 
                     <!--Current Weather-->
                     <div class="flex justify-center md:justify-end">
-                        <a href="weather.html" class="btn text-blue-500 bg-white rounded-full p-2 hover:text-blue-700">Weather goes
-                            here</a>
+                        <a href="weather.html" class="btn text-blue-500 bg-white rounded-full p-2 hover:text-blue-700" id="weatha"></a>
                     </div>
 
                     <h1 class="font-bold pt-12 border-b border-gray-100">
@@ -111,10 +110,63 @@
             </div>
 
             <!--Crime warnings-->
-            <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Crime Warnings</h4>
-            <div class="flex justify-center">
-                <div id="crimes">List of crime warnings here</div>
-            </div>
+            <div class="bg-white py-4 sm:py-8">
+                <div class="mx-auto max-w-6xl px-2 lg:px-1">
+                  <div class="py-6">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Crime Reports</h2>
+                    <p class="mt-2 text-lg leading-8 text-gray-600">Recent crime reports in the Phoenix area.</p>
+                </div>
+                <ul class="py-8 mx-auto mt-0 grid grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-4 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    <li class="flex max-w-xl py-4 flex-col items-start justify-between">
+                      <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2020-03-16" class="text-gray-500">Feb 11, 2024</time>
+                        <time datetime="2020-03-16" class="text-gray-500">time</time>
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated Assult</a>
+                      </div>
+                      <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                          <a href="#">
+                            <span class="absolute inset-0"></span>
+                            Address
+                          </a>
+                        </h3>
+                      </div>
+                    </li>
+                    <li class="flex max-w-xl py-4 flex-col items-start justify-between">
+                        <div class="flex items-center gap-x-4 text-xs">
+                          <time datetime="2020-03-16" class="text-gray-500">Feb 11, 2024</time>
+                          <time datetime="2020-03-16" class="text-gray-500">time</time>
+                          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated Theft</a>
+                        </div>
+                        <div class="group relative">
+                          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href="#">
+                              <span class="absolute inset-0"></span>
+                              Address
+                            </a>
+                          </h3>
+                        </div>
+                    </li>
+                    <li class="flex max-w-xl py-8 flex-col items-start justify-between">
+                        <div class="flex items-center gap-x-4 text-xs">
+                          <time datetime="2020-03-16" class="text-gray-500">Feb 10, 2024</time>
+                          <time datetime="2020-03-16" class="text-gray-500">time</time>
+                          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated Assult</a>
+                        </div>
+                        <div class="group relative">
+                          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href="#">
+                              <span class="absolute inset-0"></span>
+                              Address
+                            </a>
+                          </h3>
+                        </div>
+                    </li>
+              
+                    <!-- More posts... -->
+                </ul>
+                </div>
+              </div>
         </div>
     </main>
 
@@ -123,5 +175,6 @@
         <a href="/" class="flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed by [students] at [date]</a>
     </footer>
     <script src="./assets/js/crime.js"></script>
+    <script src="./assets/js/nav_weather.js"></script>
 </body>
 </html>
