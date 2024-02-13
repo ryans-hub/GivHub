@@ -13,6 +13,10 @@ var card3Trail = document.getElementById('card3-trail');
 
 const apiUrl = 'https://www.phoenixopendata.com/api/3/action/datastore_search?resource_id=aa4e2a08-c0ad-4fc4-bee9-44c2d85a58fa';
 const limit = 3;
+const newLimit = 80102;
+const offset = 64000;
+
+top3();
 
 function getRandomOffset(totalRecords) {
   return Math.floor(Math.random() * totalRecords);
@@ -69,9 +73,8 @@ function searchTrails() {
 }
 
 function top3() {
-
-  header.textContent = 'Top 3 Trails';
-  trailList.textContent = '';
+  
+  trailList.textContent = 'Top 3 Trails of 2023';
 
 
   fetch(`${apiUrl}&limit=${newLimit}&offset=${offset}`)
@@ -104,7 +107,7 @@ function top3() {
 
         if(theDate.getFullYear() === 2023) {
 
-          console.log(record);
+          // console.log(record);
 
           let trailEntry = null;
           for(var j = 0; j < topTrailsAr.length; j++) {
@@ -119,10 +122,7 @@ function top3() {
           } else {
             topTrailsAr.push({name: trailName, totalCount: record.Count || 0});
           }
-
         }
-        
-     
       }
 
       topTrailsAr.sort((a, b) => b.totalCount - a.totalCount);
@@ -132,14 +132,16 @@ function top3() {
         // createListItem.textContent = (`${i + 1}. ${topTrailsAr[i].name} - Total Count: ${topTrailsAr[i].totalCount}`);
         // trailList.appendChild(createListItem);
 
+        // console.log(topTrailsAr);
+
         card1.textContent = ("Trail 1");
-        card1Trail.textContent = (responseData.result.records[0].Site + " - Count: " + responseData.result.records[0].Count);
+        card1Trail.textContent = (topTrailsAr[0].name + " - Count: " + topTrailsAr[0].totalCount);
 
         card2.textContent = ("Trail 2");
-        card2Trail.textContent = (responseData.result.records[1].Site + " - Count: " + responseData.result.records[1].Count);
+        card2Trail.textContent = (topTrailsAr[1].name + " - Count: " + topTrailsAr[1].totalCount);
 
         card3.textContent = ("Trail 3");
-        card3Trail.textContent = (responseData.result.records[2].Site + " - Count: " + responseData.result.records[2].Count);
+        card3Trail.textContent = (topTrailsAr[2].name + " - Count: " + topTrailsAr[2].totalCount);
 
         
 
@@ -155,5 +157,5 @@ function top3() {
 }
 
 getTrailsEl.addEventListener('click', getTrails);
-top3El.addEventListener('click', top3);
+// top3El.addEventListener('click', top3);
 searchBtn.addEventListener('submit', searchTrails);
