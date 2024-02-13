@@ -154,12 +154,6 @@ function getCrime () {
 
         // createListItem.textContent = ("Crime " + [i + 1] + " " + w);
         createListItem.appendChild(createDivitem);
-      
-        var hM = responseData.result.records[i]['OCCURRED TO'];
-        if (hM == null) {
-            hM = responseData.result.records[i]['OCCURRED ON'];
-        }
-        // console.log("DateHourMinuteValue = " + hM); (debugging purposes)
 
         createTimeitem.textContent = [hM];
         createPitem.textContent = responseData.result.records[i]['UCR CRIME CATEGORY'];
