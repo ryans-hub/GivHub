@@ -153,8 +153,13 @@ function getCrime () {
         const w = responseData.result.records[i]['UCR CRIME CATEGORY'];
 
         // createListItem.textContent = ("Crime " + [i + 1] + " " + w);
-        createListItem.appendChild(createDivitem);
+        var hM = responseData.result.records[i]['OCCURRED TO'];
+        if (hM == null) {
+            hM = responseData.result.records[i]['OCCURRED ON'];
+        }
+        // console.log("DateHourMinuteValue = " + hM); (debugging purposes)
 
+        createListItem.appendChild(createDivitem);
         createTimeitem.textContent = [hM];
         createPitem.textContent = responseData.result.records[i]['UCR CRIME CATEGORY'];
         createSpan.textContent = responseData.result.records[i]["100 BLOCK ADDR"];
