@@ -16,8 +16,6 @@ const limit = 3;
 const newLimit = 80102;
 const offset = 64000;
 
-top3();
-
 function getRandomOffset(totalRecords) {
   return Math.floor(Math.random() * totalRecords);
 }
