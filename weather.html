@@ -1,31 +1,78 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Weather</title>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <link rel="stylesheet" href="./assets/css/weatha.css">
-    </head>
 
-    <body>
-        <header>
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="#">List of Trails</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col h-screen bg-[url('../images/locations/5.jpg')] bg-cover bg-center">
+    <header>
+        <div class="md:col-span-1">
+            <nav>
+                <!--Trudge logo-->
+                <div>
+                    <div class="relative object-contain h-12 w-24">
+                        <a href="/">
+                            <img class="absolute left-0 top-0 border-2 rounded-br-lg border-indigo-400"
+                                src="./images/Trudge_Logo.png">
+                        </a>
+                    </div>
+
+                    <!--Title-->
+                    <h1 class="font-bold pt-12 ">
+                        <a href="/" class="text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Trudge</a>
+                    </h1>
+                </div>
+
+                <!--Nav bars to relevant sites-->
+                <div>
+                    <ul class="grid grid-cols-4 bg-green-300" id="menu">
+                        <li class="text-gray-700">
+                            <a href="index.html">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>List of Trails</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
-            <h1>Today's Weather</h1>
-        </header>
-        <main>
-            <section></section>
-            <section></section>
-            <section></section>
-        </main>
-        <footer></footer>
-        <script src="./assets/js/weather_page.js"></script>
-    </body>
+        </div>
+    </header>
+
+    <main class="h-lvh md:col-span-1 p-8">
+        <div class="font-sans rounded-lg bg-indigo-400 shadow-lg m-8">
+            <h1 class="flex justify-center font-bold mt-4 pb-2 border-b border-slate-800">Today's Weather</h1>
+            <section id="icon"></section>
+            <section id="temperature"></section>
+            <section id="info"></section>
+            <section id="forecast"></section>
+        </div>
+    </main>
+
+    <!--Footer credits student names, date of completion-->
+    <footer>
+        <a href="/"
+            class=" flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed
+            by Adam Raschke, Ryan Pan, Noah Sehman and Damien Nez on February 14, 2024</a>
+    </footer>
+    <script src="./assets/js/weather_page.js"></script>
+</body>
+
 </html>
