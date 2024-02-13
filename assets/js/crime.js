@@ -104,7 +104,6 @@ function getCrimeHistory(street) {
 //       </div>
 //     </div>
 // </div>
-// <!--Footer credits student names, date of completion-->
 
 
 var crimeList = document.getElementById('crimes');
@@ -132,7 +131,7 @@ function getCrime () {
   .then(function (responseData) {
 
     for (var i=0; i<responseData.result.records.length; i++) {
-        console.log("Crime " + [i] + " " + responseData.result.records[i].ZIP);
+        console.log("Crime " + [i] + " " + responseData.result.records[i]['OCCURRED TO'] + " " + responseData.result.records[i]['UCR CRIME CATEGORY'] + " " + responseData.result.records[i]["100 BLOCK ADDR"]);
 
         var createListItem = document.createElement('li');
         var createDivitem = document.createElement('div');
@@ -155,8 +154,14 @@ function getCrime () {
 
         // createListItem.textContent = ("Crime " + [i + 1] + " " + w);
         createListItem.appendChild(createDivitem);
+      
+        var hM = responseData.result.records[i]['OCCURRED TO'];
+        if (hM == null) {
+            hM = responseData.result.records[i]['OCCURRED ON'];
+        }
+        // console.log("DateHourMinuteValue = " + hM); (debugging purposes)
 
-        createTimeitem.textContent = responseData.result.records[i]["OCCURRED ON"];
+        createTimeitem.textContent = [hM];
         createPitem.textContent = responseData.result.records[i]['UCR CRIME CATEGORY'];
         createSpan.textContent = responseData.result.records[i]["100 BLOCK ADDR"];
 
