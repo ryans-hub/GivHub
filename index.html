@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!---->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +9,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="flex flex-col h-screen bg-[url('../images/locations/4.jpg')]  bg-center">
     <header>
         <div class="md:col-span-1">
             <nav>
-                <!--Trudge logo and title-->
+                <!--Trudge logo-->
                 <div>
                     <div class="relative object-contain h-12 w-24">
                         <a href="/">
-                            <img class="absolute left-0 top-0" src="./images/Trudge_Logo.png">
+                            <img class="absolute left-0 top-0 border-2 rounded-br-lg border-indigo-400"
+                                src="./images/Trudge_Logo.png">
                         </a>
                     </div>
 
                     <!--Current Weather-->
                     <div class="flex justify-center md:justify-end">
-                        <a href="weather.html" class="btn text-blue-500 bg-white rounded-full p-2 hover:text-blue-700" id="weatha"></a>
+                        <a href="weather.html"
+                            class="btn text-neutral-100 bg-blue-400 rounded-full p-2 hover:text-blue-700 border-slate-600 border-2 rounded-full"
+                            id="weatha"></a>
                     </div>
 
-                    <h1 class="font-bold pt-12 border-b border-gray-100">
+                    <!--Title-->
+                    <h1 class="font-bold pt-12 ">
                         <a href="/" class="text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Trudge</a>
                     </h1>
                 </div>
 
                 <!--Nav bars to relevant sites-->
                 <div>
-                    <ul class="grid grid-cols-4">
+                    <ul class="grid grid-cols-4 bg-green-300" id="menu">
                         <li class="text-gray-700">
                             <a href="#">
                                 <span>Home</span>
@@ -59,7 +64,7 @@
         </div>
     </header>
 
-    <main class="px-16 py-6 bg-gray-100 md:col-span-2">
+    <main class=" py-6  md:col-span-2">
         <!--Search bar-->
         <div>
             <form action="#" class="flex justify-center flex-auto">
@@ -68,60 +73,128 @@
             </form>
         </div>
 
-        <div>
-            <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Featured trails</h4>
-            <div class="mt-8 grid lg:grid-cols-3 gap-10">
-                <!--Featured parks-->
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
-                    <img src="images/locations/1.jpg" alt="first park" class="w-full h-32 sm:h-48 object-cover">
-                    <div class="m-4">
-                        <span class="font-bold">Park 1</span>
-                        <span class="block text-grey-500 text-sm">Description</span>
+        <div class="h-lvh">
+            <div>
+                <h4 class="font-bold mt-12 pb-2 border-b border-slate-800">Featured trails</h4>
+                <div class="mt-8 grid lg:grid-cols-3 gap-10">
+                    <!--Featured parks-->
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                        <img src="images/locations/1.jpg" alt="first park" class="w-full h-32 sm:h-48 object-cover">
+                        <div class="m-4">
+                            <span class="font-bold">Park 1</span>
+                            <span class="block text-grey-500 text-sm">Description</span>
+                        </div>
+                        <div
+                            class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                            <span>hover 1</span>
+                        </div>
                     </div>
-                    <div
-                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
-                        <span>hover 1</span>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
-                    <img src="images/locations/2.jpg" alt="second park" class="w-full h-32 sm:h-48 object-cover">
-                    <div class="m-4">
-                        <span class="font-bold">Park 1</span>
-                        <span class="block text-grey-500 text-sm">Description</span>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                        <img src="images/locations/2.jpg" alt="second park" class="w-full h-32 sm:h-48 object-cover">
+                        <div class="m-4">
+                            <span class="font-bold">Park 1</span>
+                            <span class="block text-grey-500 text-sm">Description</span>
+                        </div>
+                        <div
+                            class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                            <span>hover 2</span>
+                        </div>
                     </div>
-                    <div
-                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
-                        <span>hover 2</span>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
-                    <img src="images/locations/3.jpg" alt="third park" class="w-full h-32 sm:h-48 object-cover">
-                    <div class="m-4">
-                        <span class="font-bold">Park 1</span>
-                        <span class="block text-grey-500 text-sm">Description</span>
+                    <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
+                        <img src="images/locations/3.jpg" alt="third park" class="w-full h-32 sm:h-48 object-cover">
+                        <div class="m-4">
+                            <span class="font-bold">Park 1</span>
+                            <span class="block text-grey-500 text-sm">Description</span>
+                        </div>
+                        <div
+                            class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
+                            <span>hover 3</span>
+                        </div>
                     </div>
-                    <div
-                        class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
-                        <span>hover 3</span>
-                    </div>
-                </div>
-            </div>
 
-            <!--Crime warnings-->
-            <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Crime Warnings</h4>
-            <div class="flex justify-center">
-                <div id="crimes">List of crime warnings here</div>
+
+
+                </div>
             </div>
         </div>
     </main>
 
+    <!--Crime warnings-->
+    <div class="bg-white py-4 sm:py-8">
+        <div class="mx-auto max-w-6xl px-2 lg:px-1">
+            <div class="py-6">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Crime Reports</h2>
+                <p class="mt-2 text-lg leading-8 text-gray-600">Recent crime reports in the Phoenix area.</p>
+            </div>
+            <ul
+                class="py-8 mx-auto mt-0 grid grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-4 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <li class="flex max-w-xl py-4 flex-col items-start justify-between">
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2020-03-16" class="text-gray-500">Feb 11, 2024</time>
+                        <time datetime="2020-03-16" class="text-gray-500">time</time>
+                        <a href="#"
+                            class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated
+                            Assult</a>
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Address
+                            </a>
+                        </h3>
+                    </div>
+                </li>
+                <li class="flex max-w-xl py-4 flex-col items-start justify-between">
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2020-03-16" class="text-gray-500">Feb 11, 2024</time>
+                        <time datetime="2020-03-16" class="text-gray-500">time</time>
+                        <a href="#"
+                            class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated
+                            Theft</a>
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Address
+                            </a>
+                        </h3>
+                    </div>
+                </li>
+                <li class="flex max-w-xl py-8 flex-col items-start justify-between">
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2020-03-16" class="text-gray-500">Feb 10, 2024</time>
+                        <time datetime="2020-03-16" class="text-gray-500">time</time>
+                        <a href="#"
+                            class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Aggrivated
+                            Assult</a>
+                    </div>
+                    <div class="group relative">
+                        <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Address
+                            </a>
+                        </h3>
+                    </div>
+                </li>
+
+                <!-- More posts... -->
+            </ul>
+        </div>
+    </div>
+
     <!--Footer credits student names, date of completion-->
     <footer>
-        <a href="/" class="flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed by [students] at [date]</a>
+        <a href="/"
+            class=" flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed
+            by [students] at [date]</a>
     </footer>
     <script src="./assets/js/crime.js"></script>
     <script src="./assets/js/nav_weather.js"></script>
 </body>
+
 </html>
