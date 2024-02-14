@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!---->
-
+<!--Head using Tailwind CSS framework-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,27 +24,43 @@
                     <!--Current Weather-->
                     <div class="flex justify-center md:justify-end">
                         <a href="weather.html"
-                            class="btn text-neutral-100 bg-blue-400 rounded-full p-2 hover:text-blue-700 border-slate-600 border-2 rounded-full"
-                            id="weatha"></a>
+                            class="btn text-neutral-100 bg-blue-400 rounded-full p-2 hover:text-blue-700 border-slate-600 border-2 rounded-full min-w-96 ps-16"
+                            id="weatha">
+                            <section class="mb-2">
+                                <img src="./images/weatherIcons/cold.png" alt="It'scold out there!" class="hidden max-h-12">
+                                <img src="./images/weatherIcons/hot.png" alt="Hot stuff" class="hidden max-h-12">
+                                <p></p><p></p>
+                            </section>
+                            <section class="mb-2">
+                                <img src="./images/weatherIcons/sunny.png" alt="Sunny" class="hidden max-h-12">
+                                <img src="./images/weatherIcons/cloudy.png" alt="Cloudy" class="hidden max-h-12">
+                                <img src="./images/weatherIcons/stormy.png" alt="Stormy" class="hidden max-h-12">
+                                <p></p><p> </p>
+                            </section>
+                            <section>
+                                <img src="./images/weatherIcons/sunrise.png" alt="Sunrise/sunset" class="max-h-12">
+                                <p></p><p></p>
+                            </section>
+                        </a>
                     </div>
 
                     <!--Title-->
                     <h1 class="font-bold pt-12 ">
-                        <a href="/" class="text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Trudge</a>
+                        <a href="/" class="text-green-500 sm:text-red-500 lg:text-amber-400 lg:text-xl">Trudge</a>
                     </h1>
                 </div>
 
                 <!--Nav bars to relevant sites-->
                 <div>
-                    <ul class="grid grid-cols-4 bg-green-300" id="menu">
+                    <ul class="grid grid-cols-4 bg-blue-400 sm:bg-cyan-500 lg:bg-green-300 sm:font-sans md:font-serif lg:font-mono">
                         <li class="text-gray-700">
                             <a href="index.html">
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span>List of Trails</span>
+                            <a id="getTrails" href="#">
+                                <span>Random Trails</span>
                             </a>
                         </li>
                         <li>
@@ -68,21 +83,21 @@
         <!--Search bar-->
         <div>
             <form action="#" class="flex justify-center flex-auto">
-                <input type="text" placeholder="search">
-                <button type="submit">Search</button>
+                <input type="text" placeholder="...find a trail" class="bg-white w-80 h-8 rounded-full border">
+                <button type="submit" class="w-16 rounded-md border-slate-400 bg-indigo-300">Search</button>
             </form>
         </div>
 
         <div class="h-lvh">
             <div>
-                <h4 class="font-bold mt-12 pb-2 border-b border-slate-800">Featured trails</h4>
+                <h4 class="font-bold text-slate-200 mt-12 pb-2 border-b border-slate-300 text-center">Top 3 Trails of 2023</h4>
                 <div class="mt-8 grid lg:grid-cols-3 gap-10">
                     <!--Featured parks-->
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
                         <img src="images/locations/1.jpg" alt="first park" class="w-full h-32 sm:h-48 object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Park 1</span>
-                            <span class="block text-grey-500 text-sm">Description</span>
+                            <span id="card1" class="font-bold">Park 1</span>
+                            <span id="card1-trail" class="block text-grey-500 text-sm">Description</span>
                         </div>
                         <div
                             class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
@@ -93,8 +108,8 @@
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
                         <img src="images/locations/2.jpg" alt="second park" class="w-full h-32 sm:h-48 object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Park 1</span>
-                            <span class="block text-grey-500 text-sm">Description</span>
+                            <span id="card2" class="font-bold">Park 2</span>
+                            <span id="card2-trail" class="block text-grey-500 text-sm">Description</span>
                         </div>
                         <div
                             class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
@@ -105,23 +120,20 @@
                     <div class="bg-white rounded overflow-hidden shadow-md relative hover:shadow-lg">
                         <img src="images/locations/3.jpg" alt="third park" class="w-full h-32 sm:h-48 object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Park 1</span>
-                            <span class="block text-grey-500 text-sm">Description</span>
+                            <span id="card3" class="font-bold">Park 3</span>
+                            <span id="card3-trail" class="block text-grey-500 text-sm">Description</span>
                         </div>
                         <div
                             class="bg-yellow-100 text-gray-400 text-xs font-bold rounded-full p-2 absolute top-0 ml-2 mt-2">
                             <span>hover 3</span>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
     </main>
             <!--Crime warnings-->
-            <div class="bg-white py-4 sm:py-8">
+            <div class="bg-indigo-300 py-4 sm:py-8 sm:mt-40">
                 <div class="mx-auto max-w-6xl px-2 lg:px-1">
                   <div class="py-6">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Crime Reports</h2>
@@ -131,16 +143,19 @@
                     <!-- More posts... -->
                   </ul>
                 </div>
-             </div>
 
-        </div>
-    </div>
+                <!--local storage thing-->
+                <div>
+                    <button id="funnyhaha"></button>
+                </div>
+             </div>
     <!--Footer credits student names, date of completion-->
     <footer>
         <a href="/"
-            class=" flex justify-center bg-teal-500 text-green-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed
+            class="flex justify-center bg-emerald-500 text-indigo-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed
             by Adam Raschke, Ryan Pan, Noah Sehman and Damien Nez on February 14, 2024</a>
     </footer>
+    <script src="./assets/js/trail.js"></script>
     <script src="./assets/js/crime.js"></script>
     <script src="./assets/js/nav_weather.js"></script>
     <script src="./assets/js/btn.js"></script>

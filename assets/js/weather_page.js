@@ -9,6 +9,11 @@ function newLine (st) {
 	return q
 }
 
+function get_location () {
+	let place = prompt("Enter your city:");
+	return place;
+}
+
 async function better (p) {
 	p = p || "Phoenix";
 	const wheat = await fetch(bfore + p);
@@ -47,6 +52,7 @@ async function better (p) {
 		moonPhase: pizza.astro.moon_phase,
 		moonRS: (pizza.astro.moonrise, pizza.astro.moonset),
 	};
+	console.log(flour);
 	const sects = document.querySelectorAll("section");
 
 	const bz = sects[0];
@@ -71,5 +77,3 @@ async function better (p) {
 //---------------------------------------------------------------------------//
 
 better("Phoenix");
-
-
