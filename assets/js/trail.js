@@ -14,6 +14,7 @@ var card3Trail = document.getElementById('card3-trail');
 const apiUrl = 'https://www.phoenixopendata.com/api/3/action/datastore_search?resource_id=aa4e2a08-c0ad-4fc4-bee9-44c2d85a58fa';
 const limit = 3;
 const newLimit = 80102;
+const searchLimit = 80102;
 const offset = 64000;
 
 top3();
@@ -68,8 +69,55 @@ function getTrails() {
     });
 }
 
-function searchTrails() {
+function searchTrails(event) {
+  event.preventDefault();
 
+  const keyword = document.getElementById('searchInput').value.toLowerCase();
+
+  fetch(`${apiUrl}&limit=${searchLimit}`)
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(function(responseData) {
+      const matchingTrails = [];
+
+      for (var i = 0; i < responseData.result.records.length; i++) {
+        var trail = responseData.result.records[i];
+        var trailName = trail.Site.toLowerCase();
+
+        if (trailName.includes(keyword)) {
+          matchingTrails.push(trail);
+        }
+
+        if (matchingTrails.length >= 3) {
+          break; // Stop once we find 3 matching trails
+        }
+      }
+
+      // Display the search results inside the searchTrailsEl element
+      trailList.textContent = keyword + ' Trails';
+
+      for (var i = 0; i < matchingTrails.length; i++) {
+      //   var resultElement = document.createElement('div');
+      //   resultElement.textContent = `Result ${i + 1}: ${matchingTrails[i].Site} - Count: ${matchingTrails[i].Count}`;
+      //   searchTrailsEl.appendChild(resultElement);
+      card1.textContent = ("Trail 1");
+      card1Trail.textContent = (matchingTrails[0].Site);
+
+      card2.textContent = ("Trail 2");
+      card2Trail.textContent = (matchingTrails[1].Site);
+
+      card3.textContent = ("Trail 3");
+      card3Trail.textContent = (matchingTrails[2].Site);
+
+      }
+    })
+    .catch(function(error) {
+      console.error('Error fetching data:', error);
+    });
 }
 
 function top3() {
@@ -158,4 +206,4 @@ function top3() {
 
 getTrailsEl.addEventListener('click', getTrails);
 // top3El.addEventListener('click', top3);
-searchBtn.addEventListener('submit', searchTrails);
+searchBtn.addEventListener('click', searchTrails);
