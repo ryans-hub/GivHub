@@ -114,14 +114,14 @@ const data = {
   
 };
 
-const apiUrl = 'https://www.phoenixopendata.com/api/3/action/datastore_search';
+const apiUrlcrime = 'https://www.phoenixopendata.com/api/3/action/datastore_search';
 
 // Using the fetch function to make a GET request with query parameters
 
 
 function getCrime () {
 
-    fetch(`${apiUrl}?${new URLSearchParams(data)}`)
+    fetch(`${apiUrlcrime}?${new URLSearchParams(data)}`)
   .then(response => {
     if (!response.ok) {
       throw new Error(`Error: ${response.status} - ${response.statusText}`);
