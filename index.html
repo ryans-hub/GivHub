@@ -88,15 +88,15 @@
     <main class=" py-6  md:col-span-2">
         <!--Search bar-->
         <div>
-            <form action="#" class="flex justify-center flex-auto">
-                <input type="text" placeholder="...find a trail" class="bg-white w-80 h-8 rounded-full border">
-                <button type="submit" class="w-16 rounded-md border-slate-400 bg-indigo-300">Search</button>
+            <form id="searchFom" action="#" class="flex justify-center flex-auto">
+                <input id="searchInput" type="text" placeholder="...find a trail" class="bg-white w-80 h-8 rounded-full border">
+                <button id="searchBtn" type="submit" class="w-16 rounded-md border-slate-400 bg-indigo-300">Search</button>
             </form>
         </div>
 
         <div class="h-lvh">
             <div>
-                <h4 class="font-bold text-slate-200 mt-12 pb-2 border-b border-slate-300 text-center">Top 3 Trails of
+                <h4 id="trails" class="font-bold text-slate-200 mt-12 pb-2 border-b border-slate-300 text-center">Top 3 Trails of
                     2023</h4>
                 <div class="mt-8 grid lg:grid-cols-3 gap-10">
                     <!--Featured parks-->
@@ -162,8 +162,9 @@
                 <a href="/"
                     class="flex justify-center bg-emerald-500 text-indigo-500 sm:text-red-500 lg:text-blue-500 lg:text-xl">Completed
                     by Adam Raschke, Ryan Pan, Noah Sehman and Damien Nez on February 14, 2024</a>
+                    <script src="./assets/js/trail.js"></script>
+
             </footer>
-            <script src="./assets/js/trail.js"></script>
             <script src="./assets/js/crime.js"></script>
             <script src="./assets/js/nav_weather.js"></script>
             <script src="./assets/js/btn.js"></script>
