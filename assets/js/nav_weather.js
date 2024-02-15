@@ -1,5 +1,5 @@
 
-const base = "http://api.weatherapi.com/v1";
+const base = "https://api.weatherapi.com/v1";
 const fore = "/forecast.json";
 const bfore = base + fore + "?key=b31d5f7b851e4eaeafd10557240802&q=";
 
