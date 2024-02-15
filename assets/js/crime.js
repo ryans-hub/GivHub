@@ -24,7 +24,6 @@ function getCrime () {
   .then(function (responseData) {
 
     for (var i=0; i<3; i++) {
-        console.log(responseData.result.records.length);
         
 
         console.log("Crime " + [i] + " " + responseData.result.records[i]['OCCURRED TO'] + " " + responseData.result.records[i]['UCR CRIME CATEGORY'] + " " + responseData.result.records[i]["100 BLOCK ADDR"]);
@@ -43,7 +42,7 @@ function getCrime () {
         createPitem.className = "relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100";
         createAddydiv.className = "group relative";
         createAddy.className = "mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600";
-        createSpan.className = "flex";
+        createSpan.className = "flex font-semibold";
         
         
         const w = responseData.result.records[i]['UCR CRIME CATEGORY'];
