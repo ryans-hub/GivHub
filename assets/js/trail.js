@@ -73,7 +73,8 @@ function getTrails() {
 function searchTrails(event) {
   event.preventDefault();
 
-  const keyword = document.getElementById('searchInput').value.toLowerCase();
+  const keywordInput = document.getElementById('searchInput');
+  const keyword = keywordInput.value.toLowerCase();
 
   fetch(`${apiUrl}&limit=${searchLimit}`)
     .then(function(response) {
@@ -113,6 +114,8 @@ function searchTrails(event) {
 
       card3.textContent = ("Trail 3");
       card3Trail.textContent = (matchingTrails[2].Site);
+
+      keywordInput.value = '';
 
       }
     })
